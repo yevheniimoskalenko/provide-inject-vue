@@ -1,17 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Як передати із одного компонента в другий не використовуючи props</h1>
+    <app-head></app-head>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import appHead from "./components/header";
 export default {
-  name: 'App',
+  name: "App",
+  provide: {
+    title: "Ось так привіт Світ: I`m Yevhenii",
+  },
   components: {
-    HelloWorld
-  }
-}
+    appHead,
+  },
+};
 </script>
 
 <style>
